@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --ink: #173d36;
+  --cream: #fbf8ef;
+  --paper: #fffdf8;
+  --lime: #b9df4a;
+  --orange: #e88931;
+  --muted: #5b756e;
+  --line: #dce5d9;
+  --sans: "DM Sans", Arial, sans-serif;
+  --serif: "Fraunces", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  left: 1rem;
+  z-index: 30;
+  padding: 0.7rem;
+  background: #fff;
+  color: #000;
+}

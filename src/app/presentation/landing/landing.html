@@ -1,0 +1,234 @@
+<a class="skip-link" href="#main-content">Ir al contenido principal</a>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="FoodSave home">
+    <span class="brand-mark" aria-hidden="true">✦</span>
+    <span>foodsave</span>
+  </a>
+
+  <nav aria-label="Primary navigation">
+    <a href="#how-it-works">Cómo funciona</a>
+    <a href="#for-businesses">Para negocios</a>
+    <a href="#impact">Impacto</a>
+  </nav>
+
+  <div class="header-actions">
+    <button class="button button-small button-dark" type="button" (click)="openInterest('customer')">
+      Ver ofertas
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- Hero Section -->
+  <section class="hero section-shell" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span>Rescata comida increíble</p>
+      <h1>Salva comida <em>A mitad de precio</em></h1>
+      <p class="hero-text">
+        Conectamos restaurantes y comercios locales con personas que buscan comida deliciosa a precios reducidos.
+      </p>
+
+      <div class="hero-actions">
+        <button class="button button-primary" type="button" (click)="openInterest('customer')">
+          Explorar ofertas <span aria-hidden="true">→</span>
+        </button>
+        <a class="text-link" href="#how-it-works">
+          Saber más <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <div><span class="trust-icon">✓</span>Comida fresca diaria</div>
+        <div><span class="trust-icon">✓</span>Sin suscripciones obligatorias</div>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-label="FoodSave featured offer">
+      <div class="sun-shape"></div>
+
+      <article class="hero-card">
+        <div class="food-illustration" aria-hidden="true">
+          <span>🥙</span><span>🍅</span><span>🥬</span>
+        </div>
+        <div class="card-content">
+          <p>{{ facade.featuredOffer.restaurant }}</p>
+          <h2>{{ facade.featuredOffer.title }}</h2>
+          <div class="price-line">
+            <span class="old-price">S/ {{ facade.featuredOffer.originalPrice }}</span>
+            <strong>S/ {{ facade.featuredOffer.discountedPrice }}</strong>
+            <span class="discount">{{ facade.featuredOffer.discountPercent }}% OFF</span>
+          </div>
+          <small>Recojo hasta las <strong>{{ facade.featuredOffer.pickupTime }}</strong></small>
+        </div>
+      </article>
+
+      <div class="floating-pill pill-left">
+        📍 {{ facade.formattedDistance() }} de distancia
+      </div>
+      <div class="floating-pill pill-right">
+        ✦ Disponible hoy
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Strip -->
+  <section class="offer-strip" aria-label="FoodSave benefits">
+    <div>
+      <strong>20–60%</strong>
+      <span>Ahorro promedio</span>
+    </div>
+    <div>
+      <strong>Recojo local</strong>
+      <span>En tus locales favoritos</span>
+    </div>
+    <div>
+      <strong>Sostenible</strong>
+      <span>Reduce el desperdicio</span>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section-shell how-section" id="how-it-works">
+    <div class="section-heading">
+      <p class="eyebrow"><span></span>Paso a paso</p>
+      <h2>¿Cómo funciona <em>FoodSave?</em></h2>
+    </div>
+
+    <div class="steps-grid">
+      <article class="step">
+        <span class="step-number">01</span>
+        <div class="step-icon">⌕</div>
+        <h3>Encuentra un pack</h3>
+        <p>Explora los excedentes del día cerca de tu ubicación.</p>
+      </article>
+
+      <article class="step">
+        <span class="step-number">02</span>
+        <div class="step-icon">✦</div>
+        <h3>Reserva tu pedido</h3>
+        <p>Asegura tu bolsa sorpresa a un precio reducido desde la web.</p>
+      </article>
+
+      <article class="step">
+        <span class="step-number">03</span>
+        <div class="step-icon">↗</div>
+        <h3>Recógelo y disfruta</h3>
+        <p>Acércate al establecimiento a la hora indicada y retira tu comida.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Business Section -->
+  <section class="business-section" id="for-businesses">
+    <div class="business-visual">
+      <div class="business-arc"></div>
+      <div class="business-card">
+        <small>RESULTADOS DEL PILOTO</small>
+        <strong>12</strong>
+        <p>Comidas salvadas por semana</p>
+        <div class="chart">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+      <div class="business-tag">Únete como aliado ↗</div>
+    </div>
+
+    <div class="business-copy">
+      <p class="eyebrow light"><span></span>Para establecimientos</p>
+      <h2>Rentabiliza tus <em>excedentes</em></h2>
+      <p>Convierte el excedente de comida en ingresos extra y atrae nuevos clientes a tu negocio.</p>
+      <ul>
+        <li>✓ Recupera costos de producción de forma sencilla</li>
+        <li>✓ Reduce el desperdicio de alimentos diario</li>
+        <li>✓ Posiciona tu marca como socialmente responsable</li>
+      </ul>
+      <button class="button button-light" type="button" (click)="openInterest('business')">
+        Registrar mi negocio <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="section-shell impact-section" id="impact">
+    <div class="impact-copy">
+      <p class="eyebrow"><span></span>Impacto positivo</p>
+      <h2>Generando cambio <em>en la comunidad</em></h2>
+      <p>Cada comida rescatada reduce la huella de carbono y apoya la sostenibilidad alimentaria.</p>
+      <a class="text-link" href="#top">Volver arriba →</a>
+    </div>
+
+    <div class="impact-cards">
+      <article>
+        <span>↻</span>
+        <h3>Menos desperdicio</h3>
+        <p>Evitamos que productos perfectamente consumibles terminen en la basura.</p>
+      </article>
+      <article>
+        <span>♥</span>
+        <h3>Más acceso</h3>
+        <p>Hacemos que la comida de calidad sea accesible para más personas.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section-shell">
+    <p class="eyebrow"><span></span>Únete al piloto</p>
+    <h2>¿Listo para <em>empezar?</em></h2>
+    <button class="button button-primary" type="button" (click)="openInterest('customer')">
+      Quiero probar FoodSave →
+    </button>
+  </section>
+</main>
+
+<footer>
+  <a class="brand" href="#top">
+    <span class="brand-mark">✦</span>foodsave
+  </a>
+  <p>© 2026 FoodSave. Todos los derechos reservados.</p>
+  <div>
+    <a routerLink="/terms">Términos</a>
+    <a routerLink="/privacy">Privacidad</a>
+    <a href="mailto:hello@foodsave.pe">Contacto</a>
+  </div>
+</footer>
+
+<!-- Modal -->
+@if (facade.dialogOpen()) {
+  <div class="modal-backdrop" (click)="closeInterest()">
+    <section class="interest-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" (click)="$event.stopPropagation()">
+      <button class="modal-close" type="button" aria-label="Close" (click)="closeInterest()">×</button>
+      <p class="eyebrow"><span></span>Piloto FoodSave</p>
+
+      <h2 id="modal-title">
+        {{ facade.audience() === 'customer' ? '¡Próximamente disponible!' : 'Suma tu negocio a FoodSave' }}
+      </h2>
+      <p>
+        {{ facade.audience() === 'customer'
+        ? 'Déjanos tu correo y te avisaremos apenas lancemos ofertas en tu zona.'
+        : 'Déjanos tu contacto para coordinar la integración de tu local.' }}
+      </p>
+
+      @if (!submitted()) {
+        <form (ngSubmit)="submitInterest()">
+          <label for="email">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            [ngModel]="email()"
+            (ngModelChange)="email.set($event)"
+            required
+            placeholder="tu@ejemplo.com"
+          />
+          <button class="button button-primary" type="submit">
+            Unirme a la lista →
+          </button>
+        </form>
+      } @else {
+        <p class="success">¡Gracias por registrarte! Te contactaremos pronto.</p>
+      }
+    </section>
+  </div>
+}
