@@ -21,8 +21,10 @@ export class LandingPage {
   readonly teamMembers = [
     { initials: 'GP', name: 'Giuliano Angel Peláez Vargas', role: 'Software Engineering' },
     { initials: 'JH', name: 'José Maria Huayra Moreyra', role: 'Software Engineering' },
-    { initials: 'XY', name: 'Xin Yu Shi Lin', role: 'Software Engineering' },
-    { initials: 'BM', name: 'Bryan Félix Martínez Ramos', role: 'Software Engineering' }
+    { initials: 'IM', name: 'Ingrid Melani Medina Merma', role: 'Software Engineering' },
+    { initials: 'BM', name: 'Bryan Félix Martínez Ramos', role: 'Software Engineering' },
+    { initials: 'XY', name: 'Xin Yu Shi Lin', role: 'Software Engineering' }
+
   ] as const;
 
   openInterest(audience: 'customer' | 'business'): void {
