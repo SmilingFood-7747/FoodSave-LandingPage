@@ -2,7 +2,7 @@
 
 <header class="site-header">
   <a class="brand" href="#top" aria-label="FoodSave home">
-    <span class="brand-mark" aria-hidden="true">✦</span>
+    <span class="brand-mark" aria-hidden="true">F</span>
     <span>foodsave</span>
   </a>
 
@@ -31,16 +31,11 @@
 
       <div class="hero-actions">
         <button class="button button-primary" type="button" (click)="openInterest('customer')">
-          Explorar ofertas <span aria-hidden="true">→</span>
+          Explorar ofertas <span aria-hidden="true">&rarr;</span>
         </button>
         <a class="text-link" href="#how-it-works">
-          Saber más <span aria-hidden="true">↓</span>
+          Saber más <span aria-hidden="true">&darr;</span>
         </a>
-      </div>
-
-      <div class="trust-row">
-        <div><span class="trust-icon">✓</span>Comida fresca diaria</div>
-        <div><span class="trust-icon">✓</span>Sin suscripciones obligatorias</div>
       </div>
     </div>
 
@@ -49,7 +44,7 @@
 
       <article class="hero-card">
         <div class="food-illustration" aria-hidden="true">
-          <span>🥙</span><span>🍅</span><span>🥬</span>
+          <span>Plato</span>
         </div>
         <div class="card-content">
           <p>{{ facade.featuredOffer.restaurant }}</p>
@@ -62,29 +57,6 @@
           <small>Recojo hasta las <strong>{{ facade.featuredOffer.pickupTime }}</strong></small>
         </div>
       </article>
-
-      <div class="floating-pill pill-left">
-        📍 {{ facade.formattedDistance() }} de distancia
-      </div>
-      <div class="floating-pill pill-right">
-        ✦ Disponible hoy
-      </div>
-    </div>
-  </section>
-
-  <!-- Offer Strip -->
-  <section class="offer-strip" aria-label="FoodSave benefits">
-    <div>
-      <strong>20–60%</strong>
-      <span>Ahorro promedio</span>
-    </div>
-    <div>
-      <strong>Recojo local</strong>
-      <span>En tus locales favoritos</span>
-    </div>
-    <div>
-      <strong>Sostenible</strong>
-      <span>Reduce el desperdicio</span>
     </div>
   </section>
 
@@ -123,15 +95,7 @@
   <section class="business-section" id="for-businesses">
     <div class="business-visual">
       <div class="business-arc"></div>
-      <div class="business-card">
-        <small>RESULTADOS DEL PILOTO</small>
-        <strong>12</strong>
-        <p>Comidas salvadas por semana</p>
-        <div class="chart">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
-      </div>
-      <div class="business-tag">Únete como aliado ↗</div>
+      <div class="business-tag">Únete como aliado &nearr;</div>
     </div>
 
     <div class="business-copy">
@@ -139,12 +103,12 @@
       <h2>Rentabiliza tus <em>excedentes</em></h2>
       <p>Convierte el excedente de comida en ingresos extra y atrae nuevos clientes a tu negocio.</p>
       <ul>
-        <li>✓ Recupera costos de producción de forma sencilla</li>
-        <li>✓ Reduce el desperdicio de alimentos diario</li>
-        <li>✓ Posiciona tu marca como socialmente responsable</li>
+        <li>Recupera costos de producción de forma sencilla</li>
+        <li>Reduce el desperdicio de alimentos diario</li>
+        <li>Posiciona tu marca como socialmente responsable</li>
       </ul>
       <button class="button button-light" type="button" (click)="openInterest('business')">
-        Registrar mi negocio <span aria-hidden="true">→</span>
+        Registrar mi negocio <span aria-hidden="true">&rarr;</span>
       </button>
     </div>
   </section>
@@ -155,7 +119,7 @@
       <p class="eyebrow"><span></span>Impacto positivo</p>
       <h2>Generando cambio <em>en la comunidad</em></h2>
       <p>Cada comida rescatada reduce la huella de carbono y apoya la sostenibilidad alimentaria.</p>
-      <a class="text-link" href="#top">Volver arriba →</a>
+      <a class="text-link" href="#top">Volver arriba &rarr;</a>
     </div>
 
     <div class="impact-cards">
@@ -177,14 +141,14 @@
     <p class="eyebrow"><span></span>Únete al piloto</p>
     <h2>¿Listo para <em>empezar?</em></h2>
     <button class="button button-primary" type="button" (click)="openInterest('customer')">
-      Quiero probar FoodSave →
+      Quiero probar FoodSave &rarr;
     </button>
   </section>
 </main>
 
 <footer>
   <a class="brand" href="#top">
-    <span class="brand-mark">✦</span>foodsave
+    <span class="brand-mark">F</span>foodsave
   </a>
   <p>© 2026 FoodSave. Todos los derechos reservados.</p>
   <div>
@@ -198,7 +162,7 @@
 @if (facade.dialogOpen()) {
   <div class="modal-backdrop" (click)="closeInterest()">
     <section class="interest-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" (click)="$event.stopPropagation()">
-      <button class="modal-close" type="button" aria-label="Close" (click)="closeInterest()">×</button>
+      <button class="modal-close" type="button" aria-label="Close" (click)="closeInterest()">&times;</button>
       <p class="eyebrow"><span></span>Piloto FoodSave</p>
 
       <h2 id="modal-title">
@@ -220,10 +184,10 @@
             [ngModel]="email()"
             (ngModelChange)="email.set($event)"
             required
-            placeholder="tu@ejemplo.com"
+            placeholder="tu correo@gmail.com"
           />
           <button class="button button-primary" type="submit">
-            Unirme a la lista →
+            Unirme a la lista &rarr;
           </button>
         </form>
       } @else {
