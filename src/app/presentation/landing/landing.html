@@ -1,181 +1,279 @@
-<a class="skip-link" href="#main-content">Ir al contenido principal</a>
 
-<header class="site-header">
-  <a class="brand" href="#top" aria-label="FoodSave home">
-    <span class="brand-mark" aria-hidden="true">F</span>
-    <span>foodsave</span>
-  </a>
-
-  <nav aria-label="Primary navigation">
-    <a href="#how-it-works">Cómo funciona</a>
-    <a href="#for-businesses">Para negocios</a>
-    <a href="#impact">Impacto</a>
-  </nav>
-
-  <div class="header-actions">
-    <button class="button button-small button-dark" type="button" (click)="openInterest('customer')">
-      Ver ofertas
-    </button>
-  </div>
-</header>
-
-<main id="main-content">
   <!-- Hero Section -->
-  <section class="hero section-shell" id="top">
+  <section class="hero section-shell" id="top" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <p class="eyebrow"><span></span>Rescata comida increíble</p>
-      <h1>Salva comida <em>A mitad de precio</em></h1>
-      <p class="hero-text">
-        Conectamos restaurantes y comercios locales con personas que buscan comida deliciosa a precios reducidos.
-      </p>
+      <p class="eyebrow"><span></span>Una nueva forma de disfrutar Lima</p>
+      <h1 id="hero-title">Tu próxima gran comida <em>tiene una segunda oportunidad.</em></h1>
+      <p class="hero-text">FoodSave conecta restaurantes A1 con personas que buscan experiencias gastronómicas de calidad a precios más accesibles.</p>
 
       <div class="hero-actions">
         <button class="button button-primary" type="button" (click)="openInterest('customer')">
-          Explorar ofertas <span aria-hidden="true">&rarr;</span>
+          Quiero probar FoodSave
+          <svg aria-hidden="true" viewBox="0 0 20 20">
+            <path d="M4 10h11M11 5l5 5-5 5"/>
+          </svg>
         </button>
-        <a class="text-link" href="#how-it-works">
-          Saber más <span aria-hidden="true">&darr;</span>
-        </a>
+        <a class="text-link" href="#how-it-works">Conoce cómo funciona</a>
       </div>
     </div>
 
-    <div class="hero-art" aria-label="FoodSave featured offer">
-      <div class="sun-shape"></div>
+    <div class="hero-art" aria-label="Ejemplo de una oferta FoodSave">
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
 
-      <article class="hero-card">
-        <div class="food-illustration" aria-hidden="true">
-          <span>Plato</span>
+      <article class="featured-offer">
+        <div class="offer-visual" aria-hidden="true">
+          <svg viewBox="0 0 240 160">
+            <path d="M46 105c10-44 42-66 77-66s68 22 76 66H46Z" fill="#d6a564"/>
+            <path d="M59 104c10-26 33-40 63-40s55 14 64 40H59Z" fill="#f5d895"/>
+            <path d="M89 78c6-21 21-36 39-38 11 8 19 23 20 38H89Z" fill="#5e8d55"/>
+            <circle cx="99" cy="82" r="7" fill="#d9593d"/>
+            <circle cx="142" cy="76" r="7" fill="#d9593d"/>
+            <path d="M47 105h152c-3 19-19 34-38 34H85c-19 0-35-15-38-34Z" fill="#fff7e6"/>
+            <path d="M47 105h152" stroke="#c98c4d" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span>Oferta del día</span>
         </div>
-        <div class="card-content">
-          <p>{{ facade.featuredOffer.restaurant }}</p>
+        <div class="offer-body">
+          <div class="offer-topline">
+            <p>{{ facade.featuredOffer.restaurant }}</p>
+            <span>Disponible hoy</span>
+          </div>
           <h2>{{ facade.featuredOffer.title }}</h2>
           <div class="price-line">
             <span class="old-price">S/ {{ facade.featuredOffer.originalPrice }}</span>
             <strong>S/ {{ facade.featuredOffer.discountedPrice }}</strong>
-            <span class="discount">{{ facade.featuredOffer.discountPercent }}% OFF</span>
+            <span class="discount">{{ facade.featuredOffer.discountPercent }}% menos</span>
           </div>
-          <small>Recojo hasta las <strong>{{ facade.featuredOffer.pickupTime }}</strong></small>
+          <div class="pickup-info">
+            <svg aria-hidden="true" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="7"/>
+              <path d="M10 6v4l3 2"/>
+            </svg>
+            Recojo hasta las <strong>{{ facade.featuredOffer.pickupTime }}</strong>
+          </div>
         </div>
       </article>
+
+      <div class="floating-note">Restaurantes seleccionados de Lima</div>
     </div>
   </section>
 
   <!-- How It Works Section -->
-  <section class="section-shell how-section" id="how-it-works">
+  <section class="section-shell how-section" id="how-it-works" aria-labelledby="how-title">
     <div class="section-heading">
-      <p class="eyebrow"><span></span>Paso a paso</p>
-      <h2>¿Cómo funciona <em>FoodSave?</em></h2>
+      <p class="eyebrow"><span></span>Simple y transparente</p>
+      <h2 id="how-title">Disfruta mejor. <em>Desperdicia menos.</em></h2>
+      <p>Una experiencia pensada para encontrar una buena oferta, decidir con información y recoger a tiempo.</p>
     </div>
 
     <div class="steps-grid">
       <article class="step">
         <span class="step-number">01</span>
-        <div class="step-icon">⌕</div>
-        <h3>Encuentra un pack</h3>
-        <p>Explora los excedentes del día cerca de tu ubicación.</p>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="10.5" cy="10.5" r="5.5"/>
+            <path d="m15 15 4 4"/>
+          </svg>
+        </div>
+        <h3>Descubre una oferta</h3>
+        <p>Encuentra opciones disponibles cerca de ti y revisa cada detalle antes de elegir.</p>
       </article>
 
       <article class="step">
         <span class="step-number">02</span>
-        <div class="step-icon">✦</div>
-        <h3>Reserva tu pedido</h3>
-        <p>Asegura tu bolsa sorpresa a un precio reducido desde la web.</p>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 4h12v16H6z"/>
+            <path d="m8.5 12 2 2 4.5-5"/>
+          </svg>
+        </div>
+        <h3>Reserva con confianza</h3>
+        <p>Conoce el precio, las condiciones y el horario de recojo antes de confirmar.</p>
       </article>
 
       <article class="step">
         <span class="step-number">03</span>
-        <div class="step-icon">↗</div>
-        <h3>Recógelo y disfruta</h3>
-        <p>Acércate al establecimiento a la hora indicada y retira tu comida.</p>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 8h14v11H5z"/>
+            <path d="M8 8V5h8v3M9 13h6"/>
+          </svg>
+        </div>
+        <h3>Recoge y disfruta</h3>
+        <p>Presenta tu código en el restaurante dentro del horario indicado y disfruta tu pedido.</p>
       </article>
     </div>
   </section>
 
+  <!-- About Section -->
+  <section class="about-section section-shell" id="about" aria-labelledby="about-title">
+    <div class="about-statement">
+      <p class="eyebrow"><span></span>Quiénes somos</p>
+      <h2 id="about-title">FoodSave es una plataforma creada para que la buena comida <em>no termine desperdiciada.</em></h2>
+    </div>
+
+    <div class="about-details">
+      <p>Conectamos los excedentes aptos para el consumo de restaurantes A1 con personas que quieren acceder a una experiencia gastronómica especial pagando menos.</p>
+      <p>Creemos que ahorrar y actuar de forma responsable pueden ser parte de una misma elección cotidiana.</p>
+      <a class="text-link" href="#for-businesses">Conoce nuestra propuesta para restaurantes</a>
+    </div>
+  </section>
+
   <!-- Business Section -->
-  <section class="business-section" id="for-businesses">
-    <div class="business-visual">
-      <div class="business-arc"></div>
-      <div class="business-tag">Únete como aliado &nearr;</div>
+  <section class="business-section" id="for-businesses" aria-labelledby="business-title">
+    <div class="business-visual" aria-hidden="true">
+      <div class="business-ring"></div>
+      <div class="business-card">
+        <span>FoodSave para restaurantes</span>
+        <strong>Más valor para cada servicio.</strong>
+      </div>
     </div>
 
     <div class="business-copy">
-      <p class="eyebrow light"><span></span>Para establecimientos</p>
-      <h2>Rentabiliza tus <em>excedentes</em></h2>
-      <p>Convierte el excedente de comida en ingresos extra y atrae nuevos clientes a tu negocio.</p>
+      <p class="eyebrow light"><span></span>Para restaurantes A1</p>
+      <h2 id="business-title">Convierte tus excedentes en <em>nuevas oportunidades.</em></h2>
+      <p>Publica ofertas claras al final de la jornada, conecta con nuevos clientes y recupera parte del valor de productos que no llegarían a venderse.</p>
       <ul>
-        <li>Recupera costos de producción de forma sencilla</li>
-        <li>Reduce el desperdicio de alimentos diario</li>
-        <li>Posiciona tu marca como socialmente responsable</li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 20 20">
+            <path d="m4 10 4 4 8-8"/>
+          </svg>
+          Publica una oferta en pocos pasos.
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 20 20">
+            <path d="m4 10 4 4 8-8"/>
+          </svg>
+          Indica precio, unidades y hora límite.
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 20 20">
+            <path d="m4 10 4 4 8-8"/>
+          </svg>
+          Gestiona reservas y valida el recojo.
+        </li>
       </ul>
       <button class="button button-light" type="button" (click)="openInterest('business')">
-        Registrar mi negocio <span aria-hidden="true">&rarr;</span>
+        Registrar mi restaurante
+        <svg aria-hidden="true" viewBox="0 0 20 20">
+          <path d="M4 10h11M11 5l5 5-5 5"/>
+        </svg>
       </button>
     </div>
   </section>
 
   <!-- Impact Section -->
-  <section class="section-shell impact-section" id="impact">
+  <section class="section-shell impact-section" id="impact" aria-labelledby="impact-title">
     <div class="impact-copy">
-      <p class="eyebrow"><span></span>Impacto positivo</p>
-      <h2>Generando cambio <em>en la comunidad</em></h2>
-      <p>Cada comida rescatada reduce la huella de carbono y apoya la sostenibilidad alimentaria.</p>
-      <a class="text-link" href="#top">Volver arriba &rarr;</a>
+      <p class="eyebrow"><span></span>Impacto que se puede elegir</p>
+      <h2 id="impact-title">Una buena decisión para ti, tu ciudad y <em>la comida.</em></h2>
+      <p>FoodSave propone una alternativa práctica para que los alimentos preparados aptos para el consumo encuentren una segunda oportunidad.</p>
     </div>
 
     <div class="impact-cards">
       <article>
-        <span>↻</span>
+        <div class="impact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 9A7 7 0 1 0 19 15"/>
+            <path d="M18 4v5h-5"/>
+          </svg>
+        </div>
         <h3>Menos desperdicio</h3>
-        <p>Evitamos que productos perfectamente consumibles terminen en la basura.</p>
+        <p>Más opciones para aprovechar excedentes antes de que termine la jornada.</p>
       </article>
+
       <article>
-        <span>♥</span>
-        <h3>Más acceso</h3>
-        <p>Hacemos que la comida de calidad sea accesible para más personas.</p>
+        <div class="impact-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 18V9m6 9V5m6 13v-7"/>
+            <path d="M4 18h16"/>
+          </svg>
+        </div>
+        <h3>Más valor</h3>
+        <p>Los restaurantes recuperan parte del valor de productos que no se venderían al precio regular.</p>
       </article>
     </div>
   </section>
 
+  <!-- Team Section -->
+  <section class="team-section section-shell" id="team" aria-labelledby="team-title">
+    <div class="team-heading">
+      <p class="eyebrow"><span></span>El equipo detrás de FoodSave</p>
+      <h2 id="team-title">Personas que diseñan una manera <em>más responsable</em> de disfrutar la ciudad.</h2>
+    </div>
+
+    <div class="team-grid">
+      @for (member of teamMembers; track member.name) {
+        <article class="team-card">
+          <div class="team-avatar" aria-hidden="true">{{ member.initials }}</div>
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.role }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
   <!-- CTA Section -->
-  <section class="cta-section section-shell">
-    <p class="eyebrow"><span></span>Únete al piloto</p>
-    <h2>¿Listo para <em>empezar?</em></h2>
+  <section class="cta-section section-shell" aria-labelledby="cta-title">
+    <p class="eyebrow"><span></span>Únete </p>
+    <h2 id="cta-title">¿Listo para descubrir una forma <em>distinta de comer?</em></h2>
+    <p>Déjanos tus datos y te avisaremos cuando FoodSave llegue a tu zona.</p>
     <button class="button button-primary" type="button" (click)="openInterest('customer')">
-      Quiero probar FoodSave &rarr;
+      Quiero probar FoodSave
+      <svg aria-hidden="true" viewBox="0 0 20 20">
+        <path d="M4 10h11M11 5l5 5-5 5"/>
+      </svg>
     </button>
   </section>
-</main>
 
-<footer>
-  <a class="brand" href="#top">
-    <span class="brand-mark">F</span>foodsave
-  </a>
-  <p>© 2026 FoodSave. Todos los derechos reservados.</p>
-  <div>
-    <a routerLink="/terms">Términos</a>
-    <a routerLink="/privacy">Privacidad</a>
-    <a href="mailto:hello@foodsave.pe">Contacto</a>
-  </div>
-</footer>
+  <!-- Legal Section -->
+  <section class="legal-section section-shell" aria-label="Información legal">
+    <article id="terms">
+      <h2>Términos y condiciones</h2>
+      <p>FoodSave es una plataforma de intermediación. Cada restaurante es responsable de los alimentos que publica, su información, condiciones de recojo y cumplimiento de normas sanitarias.</p>
+    </article>
+    <article id="privacy">
+      <h2>Privacidad</h2>
+      <p>Los datos enviados se utilizarán únicamente para comunicar novedades y coordinar una demostración, según corresponda.</p>
+    </article>
+  </section>
+
 
 <!-- Modal -->
 @if (facade.dialogOpen()) {
   <div class="modal-backdrop" (click)="closeInterest()">
     <section class="interest-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" (click)="$event.stopPropagation()">
-      <button class="modal-close" type="button" aria-label="Close" (click)="closeInterest()">&times;</button>
-      <p class="eyebrow"><span></span>Piloto FoodSave</p>
+      <button class="modal-close" type="button" aria-label="Cerrar formulario" (click)="closeInterest()">
+        <svg viewBox="0 0 20 20" aria-hidden="true">
+          <path d="m5 5 10 10M15 5 5 15"/>
+        </svg>
+      </button>
 
-      <h2 id="modal-title">
-        {{ facade.audience() === 'customer' ? '¡Próximamente disponible!' : 'Suma tu negocio a FoodSave' }}
-      </h2>
-      <p>
-        {{ facade.audience() === 'customer'
-        ? 'Déjanos tu correo y te avisaremos apenas lancemos ofertas en tu zona.'
-        : 'Déjanos tu contacto para coordinar la integración de tu local.' }}
-      </p>
+      <p class="eyebrow"><span></span>FoodSave</p>
+
+      @if (facade.audience() === 'customer') {
+        <h2 id="modal-title">Descubre ofertas hechas para aprovecharse.</h2>
+        <p>Déjanos tu correo y te avisaremos cuando FoodSave esté disponible en tu zona.</p>
+      } @else {
+        <h2 id="modal-title">Haz que cada servicio cuente.</h2>
+        <p>Cuéntanos sobre tu restaurante y coordinaremos una demostración de FoodSave.</p>
+      }
 
       @if (!submitted()) {
-        <form (ngSubmit)="submitInterest()">
+        <form (ngSubmit)="submitInterest()" novalidate>
+          @if (facade.audience() === 'business') {
+            <label for="contact-name">Nombre y restaurante</label>
+            <input
+              id="contact-name"
+              name="contactName"
+              [ngModel]="contactName()"
+              (ngModelChange)="contactName.set($event)"
+              placeholder="Ej. Ana Torres · Restaurante"
+              autocomplete="name"
+            />
+          }
+
           <label for="email">Correo electrónico</label>
           <input
             id="email"
@@ -183,15 +281,46 @@
             name="email"
             [ngModel]="email()"
             (ngModelChange)="email.set($event)"
-            required
-            placeholder="tu correo@gmail.com"
+            placeholder="nombre@correo.com"
+            autocomplete="email"
           />
+
+          @if (facade.audience() === 'business') {
+            <label for="phone">Teléfono de contacto</label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              [ngModel]="phone()"
+              (ngModelChange)="phone.set($event)"
+              placeholder="999 999 999"
+              autocomplete="tel"
+            />
+          }
+
+          @if (formError()) {
+            <p class="form-error" role="alert">{{ formError() }}</p>
+          }
+
           <button class="button button-primary" type="submit">
-            Unirme a la lista &rarr;
+            {{ facade.audience() === 'customer' ? 'Avisarme del lanzamiento' : 'Solicitar una demostración' }}
+            <svg aria-hidden="true" viewBox="0 0 20 20">
+              <path d="M4 10h11M11 5l5 5-5 5"/>
+            </svg>
           </button>
+
+          <small>Al enviar tus datos aceptas que FoodSave se comunique contigo.</small>
         </form>
       } @else {
-        <p class="success">¡Gracias por registrarte! Te contactaremos pronto.</p>
+        <div class="success">
+          <div class="success-icon">
+            <svg viewBox="0 0 20 20">
+              <path d="m4 10 4 4 8-8"/>
+            </svg>
+          </div>
+          <h3>Recibimos tus datos.</h3>
+          <p>{{ facade.audience() === 'customer' ? 'Te avisaremos cuando tengamos ofertas cerca de ti.' : 'Pronto coordinaremos una conversación sobre tu restaurante.' }}</p>
+        </div>
       }
     </section>
   </div>
