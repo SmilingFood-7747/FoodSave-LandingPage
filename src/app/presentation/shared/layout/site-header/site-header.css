@@ -1,0 +1,10 @@
+:host { display: block; }
+.skip-link { position: absolute; left: -10000px; }
+.skip-link:focus { top: 1rem; left: 1rem; z-index: 30; padding: .7rem; background: #fff; color: #000; }
+.site-header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 1.5rem; min-height: 78px; padding: 0 clamp(1.25rem, 6vw, 6rem); border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(14px); }
+.brand { display: inline-flex; align-items: center; gap: .55rem; color: var(--ink); font-size: 1.34rem; font-weight: 800; letter-spacing: -.07em; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: var(--lime); }
+.brand-mark svg { width: 19px; fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+nav { display: flex; gap: clamp(.9rem, 2.4vw, 1.8rem); margin-left: auto; } nav a { color: var(--ink); font-size: .86rem; font-weight: 600; text-decoration: none; } nav a:hover, nav a:focus-visible { color: var(--orange); }
+.button { display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 99px; font: inherit; font-weight: 750; cursor: pointer; }.button-small { padding: .68rem 1rem; font-size: .8rem; }.button-dark { background: var(--ink); color: #fff; }.button-dark:hover { background: #0e2b26; }
+@media (max-width: 800px) { nav { display: none; } .button { margin-left: auto; } } @media (max-width: 390px) { .site-header { padding-inline: 1rem; } .button-small { padding: .6rem .75rem; } }
