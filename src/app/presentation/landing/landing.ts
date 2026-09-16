@@ -37,7 +37,8 @@ export class LandingPage {
 
   submitInterest(): void {
     const needsBusinessFields = this.facade.audience() === 'business';
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email().trim());
+    const correo = this.email().trim();
+    const validEmail = correo.includes('@') && correo.includes('.');
 
     if (!validEmail || (needsBusinessFields && (!this.contactName().trim() || !this.phone().trim()))) {
       this.formError.set(needsBusinessFields
